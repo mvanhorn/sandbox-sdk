@@ -109,18 +109,58 @@ export type {
   InterpreterClient
 } from './clients/interpreter-client.js';
 export type { RPCTransportContext, RPCTransportErrorKind } from './errors';
-// Export backup and process readiness errors
+// Export error classes for type-safe `instanceof` handling
 export {
   BackupCreateError,
   BackupExpiredError,
   BackupNotFoundError,
   BackupRestoreError,
+  CodeExecutionError,
+  CommandError,
+  // Command errors
+  CommandNotFoundError,
+  ContextNotFoundError,
+  CustomDomainRequiredError,
+  FileExistsError,
+  // File system errors
+  FileNotFoundError,
+  FileSystemError,
+  FileTooLargeError,
+  GitAuthenticationError,
+  GitBranchNotFoundError,
+  GitCheckoutError,
+  GitCloneError,
+  GitError,
+  GitNetworkError,
+  // Git errors
+  GitRepositoryNotFoundError,
+  // Code interpreter errors
+  InterpreterNotReadyError,
   InvalidBackupConfigError,
+  InvalidGitUrlError,
+  InvalidPortError,
+  PermissionDeniedError,
+  // Port errors
+  PortAlreadyExposedError,
+  PortError,
+  PortInUseError,
+  PortNotExposedError,
+  ProcessError,
   ProcessExitedBeforeReadyError,
+  // Process errors
+  ProcessNotFoundError,
   ProcessReadyTimeoutError,
   // RPC transport error (raised on capnweb WebSocket session failures)
   RPCTransportError,
-  SessionTerminatedError
+  // Base error
+  SandboxError,
+  ServiceNotRespondingError,
+  // Session errors
+  SessionAlreadyExistsError,
+  SessionDestroyedError,
+  SessionTerminatedError,
+  // Validation errors
+  ValidationFailedError
 } from './errors';
 // Export file streaming utilities for binary file support
 export { collectFile, streamFile } from './file-stream';
